@@ -1,0 +1,107 @@
+/* .custom-control-input:not(:checked) ~ .custom-control-label::before {
+  background-color: blue; 
+  border-color: yellow;  
+  border-radius: 3px;     
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: red;  
+    border-color: green;  
+    border-radius: 3px; 
+}
+
+.checkbox-outside-card.custom-control-input:not(:checked) ~ .custom-control-label::after {
+  background-color: #fff; 
+  border: 2px solid purple;
+  border-radius: 3px; 
+}
+
+.checkbox-outside-card.custom-control-input:checked ~ .custom-control-label::after {
+  background-color: pink; 
+  border: 2px solid violet; 
+  border-radius: 3px; 
+}  */
+
+.card-checkbox.custom-control-input:not(:checked) ~ .custom-control-label::before {
+  background-color: blue; /* Change the background color of the toggle container  when it is not checked */
+  border-color: yellow; /* Change the border color of the toggle container when it is not checked */
+}
+
+.card-checkbox.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: red; /* Change the color of the toggle container when it is checked */
+    border-color: green; /* Change the border color of the toggle container when it is checked */
+}
+
+/* toggle knob */
+.card-checkbox.checkbox-outside-card.custom-control-input:not(:checked) ~ .custom-control-label::after {
+  background-color: #fff; /* Change the background color of the knob when it is checked */
+  border: 2px solid purple; /* Add a border if you prefer */
+}
+
+.card-checkbox.checkbox-outside-card.custom-control-input:checked ~ .custom-control-label::after {
+  background-color: pink; /* Change the background color of the knob when it is checked */
+  border: 2px solid violet; /* Add a border if you prefer */
+}
+
+.card-checkbox.custom-control-input:not(:checked) ~ .custom-control-label::before {
+  background-color: blue; /* Change the background color of the toggle when it is not checked */
+  border-color: yellow; /* Change the border color of the checkbox when it is not checked */
+}
+
+
+#nv1{
+  background-color: rgb(255, 255, 255);
+}
+#nv2{
+  background-color: rgb(224, 224, 224);
+}
+#nv3{
+  background-color: rgb(193, 193, 193);
+}
+#nv4{
+  background-color: rgb(162, 162, 162);
+}
+#nv5{
+  background-color: rgb(131, 131, 131);
+}
+
+
+.svg-button {
+  background-color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.svg-button:hover {
+  background-color: #f0f0f0;
+}
+
+.svg-path {
+  transition: stroke-width 0.3s;
+}
+
+.svg-button:hover .svg-path {
+  stroke-width: 2;
+}
+
+/* CSS */
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0; /* Começa totalmente desenhado */
+}
+
+.svg-button:hover .svg-path {
+  animation: draw 500ms ease-in forwards;
+}
+

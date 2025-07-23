@@ -1,0 +1,22 @@
+<h1>Lista de deseados</h1>
+@if (productoEnDeseados.length === 0) {
+  <div>
+    <p>No hay deseados en tu lista de deseados</p>
+  </div>
+}
+
+<div class="card-container">
+  @for (item of productoEnDeseados; track item; let i = $index) {
+    <div class="card">
+      <img [src]="item.producto.imagen" alt="{{item.producto.nombre}}" class="product-image">
+      <h2>{{item.producto.nombre}}</h2>
+      <p>{{item.producto.descripcion}}</p>
+      <p>Precio:{{item.producto.precio}}</p>
+      <div class="btn-container">
+        <button type="button" class="btn btn-outline-primary" style="height: 40px; width: 70%; justify-content: center; border-radius: 10px;" (click)="agregarC(item.producto)">Agregar al carrito</button>
+      </div>
+      <button (click)="eliminarProducto(item.producto.id)">Eliminar</button>
+    </div>
+  }
+</div>
+

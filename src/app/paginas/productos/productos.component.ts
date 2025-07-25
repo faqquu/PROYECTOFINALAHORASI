@@ -19,100 +19,76 @@ export class ProductosComponent {
 
     {
       id: 1,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Cerezos',
+      descripcion: 'Ramo',
       precio: 10,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/cerezos.webp',
       disponibilidad: true
     },
 
     {
       id: 2,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Girasoles',
+      descripcion: 'Ramo',
       precio: 20,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/girasoles.jpeg',
       disponibilidad: true
     },
   
     {
       id: 3,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Hortensias',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/horte.webp',
       disponibilidad: true
     },
     {
       id: 4,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Lilas',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/lilas.jpg',
       disponibilidad: true
     },
     {
       id: 5,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Lirios',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/lirios.jpg',
       disponibilidad: true
     },
     {
       id: 6,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Orquideas',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/orquidea.jpeg',
       disponibilidad: true
     },
     {
       id: 7,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Rosas',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/rosas.jpg',
       disponibilidad: true
     },
     {
       id: 8,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Tulipan',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/tulipan.jpg',
       disponibilidad: true
     },
     {
       id: 9,
-      nombre: 'perro',
-      descripcion: 'perro',
+      nombre: 'Amapolas',
+      descripcion: 'Ramo',
       precio: 30,
-      imagen: './asset/dog-dance.gif',
-      disponibilidad: true
-    },
-    {
-      id: 10,
-      nombre: 'perro',
-      descripcion: 'perro',
-      precio: 30,
-      imagen: './asset/dog-dance.gif',
-      disponibilidad: true
-    },
-    {
-      id: 11,
-      nombre: 'perro',
-      descripcion: 'perro',
-      precio: 30,
-      imagen: './asset/dog-dance.gif',
-      disponibilidad: true
-    },
-    {
-      id: 12,
-      nombre: 'perro',
-      descripcion: 'perro',
-      precio: 30,
-      imagen: './asset/dog-dance.gif',
+      imagen: './asset/Productos/amapola.jpg',
       disponibilidad: true
     }
 

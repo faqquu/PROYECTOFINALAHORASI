@@ -115,3 +115,12 @@ a span:nth-child(4) {
     bottom: 100%;
   }
 }
+
+
+#fondoQS{
+  background-image: url("https://a-static.besthdwallpaper.com/spring-blossoms-wallpaper-2560x1600-11039_7.jpg"); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
+  margin: 0; /* Elimina el margen predeterminado del body */
+}

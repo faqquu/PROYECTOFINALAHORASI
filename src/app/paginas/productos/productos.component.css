@@ -16,7 +16,7 @@ body{
 /*Estilos para la tarjeta*/
 .card{
     width: 18rem;
-    background-color: rgb(64,64,64);
+    background-color: rgb(2, 99, 179);
     color: rgb(0, 0, 0);
     border-radius: 10px;
     display: flex;
@@ -29,7 +29,7 @@ body{
 .card:hover {
     transform: scale(1.0);
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
-    color: rgb(255, 255, 255);
+    color: rgb(255, 236, 132);
 }
 
 /*Imagen dentro de la tarjeta*/

@@ -1,1 +1,26 @@
-<p>ofertas works!</p>
+<h1 align="center">Ofertas</h1>
+<div class="card-container">
+  @if (oferta && oferta.length){
+    @for (oferta of oferta; track oferta){
+      @if (oferta.disponibilidad){
+        <div class="card" align="center">
+          <img [src]="oferta.imagen" alt="{{oferta.nombre}}" class="product-image">
+          <h2>{{oferta.nombre}}</h2>
+          <p>{{oferta.descripcion}}</p>
+          <p>Precio:<a style="font-size: 10px;"><br> <del> ${{ oferta.precioan }} </del> </a> <br> ${{oferta.precio}} </p>
+          <div class="btn-container">
+            <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(oferta)">
+              <img src="./asset/UI/carrito.png" alt="" style="width: 35px; height: 35px;">
+            </button>
+            
+            <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="agregarD(oferta)"> 
+              <img src="./asset/UI/Afav.png" alt="" style="height: 35px; width: 35px;">
+            </button>
+
+          </div>
+        </div>
+     }
+    }
+   }
+  
+</div>

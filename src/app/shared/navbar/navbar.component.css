@@ -50,19 +50,34 @@
 
 
 #nv1{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(224, 224, 224);
+  border: 3px solid;
+  border-width: 3px;
+  border-color: rgb(143, 143, 143);
 }
 #nv2{
   background-color: rgb(224, 224, 224);
+  border: 3px solid;
+  border-width: 3px;
+  border-color: rgb(143, 143, 143);
 }
 #nv3{
-  background-color: rgb(193, 193, 193);
+  background-color: rgb(224, 224, 224);
+  border: 3px solid;
+  border-width: 3px;
+  border-color: rgb(143, 143, 143);
 }
 #nv4{
-  background-color: rgb(162, 162, 162);
+  background-color: rgb(224, 224, 224);
+  border: 3px solid;
+  border-width: 3px;
+  border-color: rgb(143, 143, 143);
 }
 #nv5{
-  background-color: rgb(131, 131, 131);
+  background-color: rgb(224, 224, 224);
+  border: 3px solid;
+  border-width: 3px;
+  border-color: rgb(143, 143, 143);
 }
 
 

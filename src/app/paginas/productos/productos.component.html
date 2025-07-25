@@ -1,4 +1,4 @@
-<h1>Productos</h1>
+<h1 align="center">Productos</h1>
 <div class="card-container">
   @if (Productos && Productos.length) {
     @for (producto of Productos; track producto) {
@@ -7,18 +7,18 @@
           <img [src]="producto.imagen" alt="{{producto.nombre}}" class="product-image">
           <h2>{{producto.nombre}}</h2>
           <p>{{producto.descripcion}}</p>
-          <p>Precio:{{producto.precio}}</p>
+          <p>Precio: <br> ${{producto.precio}}</p>
           <div class="btn-container">
 
             <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(producto)">
-              <img src="./asset/carrito.png" alt="" style="width: 35px; height: 35px;">
+              <img src="./asset/UI/carrito.png" alt="" style="width: 35px; height: 35px;">
             </button>
             
             <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="agregarD(producto)"> 
-              <img src="./asset/deseados.png" alt="" style="height: 35px; width: 35px;">
+              <img src="./asset/UI/Afav.png" alt="" style="height: 35px; width: 35px;">
             </button>
 
-          </div>
+          </div>  
         </div>
       }
     }

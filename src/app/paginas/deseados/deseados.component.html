@@ -12,13 +12,15 @@
       <h2>{{item.producto.nombre}}</h2>
       <p>{{item.producto.descripcion}}</p>
       <p>Precio:{{item.producto.precio}}</p>
-      <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(item.producto)">
-        <img src="./asset/carrito.png" alt="" style="width: 35px; height: 35px;">
-      </button>
-
-      <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="eliminarProducto(item.producto.id)"> 
-              <img src="./asset/Rfav.png" alt="" style="height: 35px; width: 35px;">
-      </button>
+      <div class="btn-container">
+        <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(item.producto)">
+          <img src="./asset/UI/carrito.png" alt="" style="width: 35px; height: 35px;">
+        </button>
+  
+        <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="eliminarProducto(item.producto.id)"> 
+                <img src="./asset/UI/Rfav.png" alt="" style="height: 35px; width: 35px;">
+        </button>
+      </div>
 
     </div>
   }

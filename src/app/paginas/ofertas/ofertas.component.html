@@ -1,9 +1,9 @@
-<h1 align="center">Ofertas</h1>
-<div class="card-container">
+<h1 align="center" class="mf">Ofertas</h1>
+<div class="card-container mf">
   @if (oferta && oferta.length){
     @for (oferta of oferta; track oferta){
       @if (oferta.disponibilidad){
-        <div class="card" align="center">
+        <div class="card mf" align="center">
           <img [src]="oferta.imagen" alt="{{oferta.nombre}}" class="product-image">
           <h2>{{oferta.nombre}}</h2>
           <p>{{oferta.descripcion}}</p>

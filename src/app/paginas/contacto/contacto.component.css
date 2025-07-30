@@ -16,3 +16,9 @@
     width: 500px;
 }
 
+.mf{
+    font-family: 'MinaFlower';
+    src: url('/./asset/MinaFlower.ttf') format('ttf');
+    font-style: normal;
+    font-weight: normal;
+}

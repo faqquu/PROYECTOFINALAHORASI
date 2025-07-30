@@ -136,3 +136,11 @@ body{
   width: 100%;
   background: #d90429;
 }
+
+
+.mf{
+    font-family: 'MinaFlower';
+    src: url('/./asset/MinaFlower.ttf') format('ttf');
+    font-style: normal;
+    font-weight: normal;
+}

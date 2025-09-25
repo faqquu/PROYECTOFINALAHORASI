@@ -117,14 +117,63 @@ a span:nth-child(4) {
 }
 
 
-#fondoQS{
-  background-image: url("https://a-static.besthdwallpaper.com/spring-blossoms-wallpaper-2560x1600-11039_7.jpg"); /* Reemplaza con la ruta de tu imagen */
+#fondoQS {
+  background-image: url("https://a-static.besthdwallpaper.com/spring-blossoms-wallpaper-2560x1600-11039_7.jpg");
   background-size: cover;
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 1000px; /* Asegura que el fondo ocupe toda la altura de la ventana */
-  margin: 0; /* Elimina el margen predeterminado del body */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh; /* ✅ Cambiá height por min-height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
 }
 
+.qs-container {
+  display: flex;                        /* Usa flexbox para organizar hijos en fila */
+  justify-content: center;              /* Centra horizontalmente los hijos */
+  align-items: center;                  /* Centra verticalmente los hijos */
+  gap: 40px;                           /* Espacio horizontal entre cada hijo */
+  padding: 50px;                       /* Espacio interno alrededor del contenido */
+  flex-wrap: nowrap;                   /* Evita que los elementos hagan salto de línea */
+  max-width: 1200px;                   /* Ancho máximo del contenedor */
+  margin: auto;                       /* Centra el contenedor horizontalmente en la página */
+  background-color: rgba(255,255,255,0.85); /* Fondo blanco semitransparente */
+  border-radius: 12px;                 /* Bordes redondeados */
+}
+
+
+.qs-texto {
+  max-width: 500px;                  /* Ancho máximo para el texto */
+  text-align: justify;               /* Justifica el texto para mejor lectura */
+  color: #000;                      /* Color negro para el texto */
+}
+
+.qs-texto h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.qs-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.img-group {
+  display: flex;                      /* Usa flexbox para el grupo de imágenes */
+  flex-direction: column;             /* Apila las imágenes en columna */
+  gap: 20px;                         /* Espacio vertical entre imágenes */
+  justify-content: center;            /* Centra verticalmente las imágenes dentro del grupo */
+}
+
+.img-side {
+  width: 120px;                      /* Ancho fijo para cada imagen */
+  height: auto;                      /* Altura proporcional para mantener proporción */
+  object-fit: contain;               /* Ajusta imagen para que quepa sin recortar */
+  border-radius: 8px;                /* Bordes redondeados para las imágenes */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra sutil alrededor de la imagen */
+}
 
 .mf{
     font-family: 'MinaFlower';

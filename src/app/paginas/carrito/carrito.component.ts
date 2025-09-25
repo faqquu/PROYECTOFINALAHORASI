@@ -1,19 +1,20 @@
-
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../../modelos/producto.models';
 import { CarritoService } from '../../servicios/carrito.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
 })
 export class CarritoComponent implements OnInit {
   productoEnCarrito: { producto: Producto; cantidad: number;}[] = [];
 
-  constructor(private carritoService: CarritoService) { };
+  constructor(private carritoService: CarritoService, private router:Router) { };
 
   ngOnInit(): void {
     this.carritoService.carrito$.subscribe((productos) => {
@@ -39,10 +40,21 @@ export class CarritoComponent implements OnInit {
     this.carritoService.vaciarCarrito()
   }
 
-  realizarCompra(){
-    alert("Compra Realizada Exitosamente");
-    this.vaciarCarrito();
+  // realizarCompra(){
+  //   alert("Compra Realizada Exitosamente");
+  //   this.vaciarCarrito();
+  // }
+
+  irAFormularioCompra(){
+    //Redirige al usuario a la ruta '/compra', donde se encuentra el formulario para finalizar la compra 
+    this.router.navigate(['/compra'])
   }
-
-
+  //calcular el total del carrito de compras
+  calcularTotal(): number{
+    //recorre el arreglo de productos en el carrito y suma el resultado de (precio*cantidad) 
+    return this.productoEnCarrito.reduce((total,item)=>{
+      return total + item.producto.precio * item.cantidad
+    },0)
+       
+  }
 }

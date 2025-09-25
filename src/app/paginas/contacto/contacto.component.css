@@ -1,9 +1,10 @@
 #fondoC{
-     background-image: url("https://www.baltana.com/files/wallpapers-2/Beautiful-Flower-Wallpaper-07640.jpg"); /* Reemplaza con la ruta de tu imagen */
-  background-size: cover;
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
-  margin: 0; /* Elimina el margen predeterminado del body */
+    background-image: url(/asset/Otros/f8.jpg); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    background-attachment: fixed;
 }
 
 

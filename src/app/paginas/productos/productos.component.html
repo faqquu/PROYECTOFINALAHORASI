@@ -1,27 +1,81 @@
-<h1 align="center" class="mf">Productos</h1>
-<div class="card-container mf">
-  @if (Productos && Productos.length) {
-    @for (producto of Productos; track producto) {
-      @if (producto.disponibilidad) {
-        <div class="card" align="center">
-          <img [src]="producto.imagen" alt="{{producto.nombre}}" class="product-image">
-          <h2>{{producto.nombre}}</h2>
-          <p>{{producto.descripcion}}</p>
-          <p>Precio: <br> ${{producto.precio}}</p>
-          <div class="btn-container">
+<div class="filtros">
+  <div class="row mb-3">
+    <div class="col md-3">
 
-            <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(producto)">
-              <img src="./asset/UI/carrito.png" alt="" style="width: 35px; height: 35px;">
-            </button>
+      <label>Categoria:</label>
+      <select class="form-select" [(ngModel)]="selectedCategory" name="categoria">
+        <option value="">Todas</option>
+        @for (categoria of categories; track categoria) {
+        <option [value]="categoria">{{categoria}}</option>
+        }
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label>Marca:</label>
+      <select class="form-select" [(ngModel)]="selectedBrand" name="marca">
+        <option value="">Todas</option>
+          @for (marca of Marca; track marca) {
+            <option [value]="marca">{{ marca }}</option>
+          } 
+      </select>
+    </div>
+
+
+    <div class="col-md-2">
+      <label>Precio min:</label>
+      <input type="number" class="form-control" [(ngModel)]="minprecio" name="minprecio">
+    </div>
+
+    <div class="col-md-2">
+      <label>Precio max:</label>
+      <input type="number" class="form-control" [(ngModel)]="maxprecio" name="maxprecio">
+    </div>
+
+    <div class="col-md-2 d-flex align-items-end">
+      <button type="button" style="color: black; background-color: blueviolet; width: 100px; height: 40px; border-radius: 12px;" (click)="resetFilters()">
+        Limpiar
+      </button>
+    </div>
+  </div>
+
+  <div class="card-container">
+    @if(filteredProducts && filteredProducts.length){
+      <ng-container>
+        @for(producto of filteredProducts; track producto){
+          <ng-container>
+            @if(producto.disponibilidad){
+              <div class="card">
+                <img [src]="producto.imagen" alt="{{producto.nombre}}" class="product-image">
+                <h2>{{producto.nombre}}</h2>
+                <p>{{producto.descripcion}}</p>
+                <p>Precio: {{producto.precio}}</p>
+                <p>Cantidad: {{producto.cantidad}}</p>
+                <p>Categoria: {{producto.categoria}}</p>
+                <p>Marca: {{producto.marca}}</p>
+                <i class="bi bi-hand-thumbs-up"></i>
+      
+                <div class="btn-container">
+            		<button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--green" style="width: 50%; height: 100%;" (click)="agregarC(producto)">
+             			<img src="./asset/UI/carrito.png" alt="" style="width: 35px; height: 35px;">
+            		</button>
             
-            <button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="agregarD(producto)"> 
-              <img src="./asset/UI/Afav.png" alt="" style="height: 35px; width: 35px;">
-            </button>
-
-          </div>  
-        </div>
-      }
+            		<button type="button" class="css-button css-button-sliding-to-top css-button-sliding-to-top--rose" style="width: 50%; height: 100%;" (click)="agregarD(producto)"> 
+              			<img src="./asset/UI/Afav.png" alt="" style="height: 35px; width: 35px;">
+            		</button>
+          	</div>  
+              </div>
+            }
+          </ng-container>
+        }
+      </ng-container>
     }
-  }
-</div>
 
+    @if(filteredProducts.length === 0){
+    <div class="text-muted">
+      No se encontraron productos que coincidan con los filtros.
+    </div>
+    }
+  </div>
+
+</div>

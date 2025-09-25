@@ -1,54 +1,60 @@
-<h1>Carrito de Compras</h1>
-@if (productoEnCarrito.length === 0) {
-  <div>
+<h1 class="text-center my-4">Carrito de Compras</h1>
+
+@if(productoEnCarrito.length === 0){
+<div class="alert alert-warning text-center">
     <p>No hay productos en el carrito</p>
+</div>
+}
+
+@if(productoEnCarrito.length > 0){
+<div class="container">
+<table class="table table-hover table-bordered align-middle text-center">
+    <thead class="table-dark">
+        <tr> 
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio c/u</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of productoEnCarrito; track item; let i = $index) {
+        <tr>
+            <td>
+              <img [src]="item.producto.imagen" alt="{{ item.producto.nombre }}" class="img-thumbnail" style="width: 70px; height: 70px;">
+            </td>
+            <td class="fw-bold"> {{item.producto.nombre}} </td>
+            <td> {{item.producto.descripcion}} </td>
+            <td> {{item.producto.precio}} </td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Cantidad">
+                <button class="btn btn-outline-danger btn-sm" (click)="quitarCantidad(i)">-</button>
+                <span class="px-2">{{item.cantidad}}</span>
+                <button class="btn btn-outline-success btn-sm" (click)="agregarCantidad(i)">+</button>
+                </div>
+            </td>
+            <td>
+                {{item.producto.precio * item.cantidad}}
+            </td>
+            <td>
+                <button class="btn btn-outline-danger btn-sm" (click)="eliminarProducto(item.producto.id)">
+                    <i class="bi bi-trash"></i>Eliminar
+                </button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@if(productoEnCarrito.length > 0){
+  <div class="text-end mt-4">
+      <h4 class="fw-bold">Total: {{calcularTotal()}}</h4>
+      <button class="btn btn-primary mt-2" (click)="irAFormularioCompra()">
+          <i class="bi bi-cart-check"></i> Realizar Compra
+      </button>
   </div>
 }
-<table class="table">
-  <thead>
-    <tr>
-      <th>Imagen</th>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Precio c/u</th>
-      <th>Cantidad</th>
-      <th>Total</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    @for (item of productoEnCarrito; track item; let i = $index) {
-      <tr>
-        <td><img [src]="item.producto.imagen" alt="{{ item.producto.nombre }}" style="width: 50px; height: 50px;">
-        </td>
-        <td> {{item.producto.nombre}} </td>
-        <td> {{item.producto.descripcion}} </td>
-        <td> {{item.producto.precio}} </td>
-        <td>
-          <button (click)="quitarCantidad(i)">-</button>
-          {{item.cantidad}}
-          <button (click)="agregarCantidad(i)">+</button>
-        </td>
-        <td>
-          {{item.producto.precio * item.cantidad}}
-        </td>
-        <td>
-          <button (click)="eliminarProducto(item.producto.id)">Eliminar</button>
-        </td>
-      </tr>
-    }
-  </tbody>
-
-</table>
-
-<div class="ContenedorBoton">
-  <a>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <button (click)="realizarCompra()" id="RealizarCompraBoton">Realizar Compra</button>
-  </a>
 </div>
-
+}

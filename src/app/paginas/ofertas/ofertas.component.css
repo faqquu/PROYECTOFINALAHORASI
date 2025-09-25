@@ -29,7 +29,7 @@ body{
 .card:hover {
     transform: scale(1.0);
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
-    color: rgb(151, 184, 255);
+    color: rgb(0, 255, 0);
 }
 
 /*Imagen dentro de la tarjeta*/

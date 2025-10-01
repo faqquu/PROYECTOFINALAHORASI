@@ -6,8 +6,9 @@
 </div>
 }
 
+<div style="display: flex; justify-content: center;">
 @if(productoEnCarrito.length > 0){
-<div class="container">
+<div class="container" >
 <table class="table table-hover table-bordered align-middle text-center">
     <thead class="table-dark">
         <tr> 
@@ -28,7 +29,15 @@
             </td>
             <td class="fw-bold"> {{item.producto.nombre}} </td>
             <td> {{item.producto.descripcion}} </td>
-            <td> {{item.producto.precio}} </td>
+            <td>
+                @if(item.producto.oferta && item.producto.precioDescuento != null){
+                    <span class="text-muted text-decoration-line-through">${{ item.producto.precio }}</span><br>
+                    <strong>${{ item.producto.precioDescuento }}</strong>
+                } @else {
+                    <strong>${{ item.producto.precio }}</strong>
+                }
+            </td>
+
             <td>
                 <div class="btn-group" role="group" aria-label="Cantidad">
                 <button class="btn btn-outline-danger btn-sm" (click)="quitarCantidad(i)">-</button>
@@ -37,8 +46,13 @@
                 </div>
             </td>
             <td>
-                {{item.producto.precio * item.cantidad}}
+                @if(item.producto.oferta && item.producto.precioDescuento != null){
+                    {{item.producto.precioDescuento * item.cantidad}}
+                } @else {
+                    {{item.producto.precio * item.cantidad}}
+                }
             </td>
+
             <td>
                 <button class="btn btn-outline-danger btn-sm" (click)="eliminarProducto(item.producto.id)">
                     <i class="bi bi-trash"></i>Eliminar
@@ -58,3 +72,4 @@
 }
 </div>
 }
+</div>

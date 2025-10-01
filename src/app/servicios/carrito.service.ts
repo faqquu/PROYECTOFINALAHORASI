@@ -56,7 +56,10 @@ export class CarritoService {
   obtenerTotal(): number{
     const productos =  this.carritoSubject.getValue();
     //Usamos reduce para sumar los subtotales de cada producto
-    return productos.reduce((total,item)=> total + item.producto.precio*item.cantidad, 0)
+    return productos.reduce((total, item) => {
+    const precioUnitario = item.producto.oferta ? item.producto.precioDescuento ?? item.producto.precio : item.producto.precio;
+    return total + precioUnitario * item.cantidad; 
+    }, 0);
   }
   
   constructor() { }

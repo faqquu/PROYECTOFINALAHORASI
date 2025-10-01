@@ -50,11 +50,14 @@ export class CarritoComponent implements OnInit {
     this.router.navigate(['/compra'])
   }
   //calcular el total del carrito de compras
-  calcularTotal(): number{
-    //recorre el arreglo de productos en el carrito y suma el resultado de (precio*cantidad) 
-    return this.productoEnCarrito.reduce((total,item)=>{
-      return total + item.producto.precio * item.cantidad
-    },0)
-       
-  }
+  calcularTotal(): number {
+  return this.productoEnCarrito.reduce((total, item) => {
+    const precio = item.producto.oferta && item.producto.precioDescuento != null
+      ? item.producto.precioDescuento
+      : item.producto.precio;
+
+    return total + (precio * item.cantidad);
+  }, 0);
+}
+
 }

@@ -3,7 +3,7 @@
     <div class="col md-3">
 
       <label>Categoria:</label>
-      <select class="form-select" [(ngModel)]="selectedCategory" name="categoria">
+      <select class="form-select" [(ngModel)]="selectedCategory" name="categoria" (ngModelChange)="filtrarProductos()">
         <option value="">Todas</option>
         @for (categoria of categories; track categoria) {
         <option [value]="categoria">{{categoria}}</option>
@@ -13,9 +13,9 @@
 
     <div class="col-md-3">
       <label>Marca:</label>
-      <select class="form-select" [(ngModel)]="selectedBrand" name="marca">
+      <select class="form-select" [(ngModel)]="selectedBrand" name="marca" (ngModelChange)="filtrarProductos()">
         <option value="">Todas</option>
-          @for (marca of Marca; track marca) {
+          @for (marca of marcas; track marca) {
             <option [value]="marca">{{ marca }}</option>
           } 
       </select>
@@ -24,12 +24,12 @@
 
     <div class="col-md-2">
       <label>Precio min:</label>
-      <input type="number" class="form-control" [(ngModel)]="minprecio" name="minprecio">
+      <input type="number" class="form-control" [(ngModel)]="minprecio" name="minprecio" (ngModelChange)="filtrarProductos()">
     </div>
 
     <div class="col-md-2">
       <label>Precio max:</label>
-      <input type="number" class="form-control" [(ngModel)]="maxprecio" name="maxprecio">
+      <input type="number" class="form-control" [(ngModel)]="maxprecio" name="maxprecio" (ngModelChange)="filtrarProductos()">
     </div>
 
     <div class="col-md-2 d-flex align-items-end">
@@ -45,11 +45,22 @@
         @for(producto of filteredProducts; track producto){
           <ng-container>
             @if(producto.disponibilidad){
-              <div class="card">
+              <div class="card" style="align-items: center;">
                 <img [src]="producto.imagen" alt="{{producto.nombre}}" class="product-image">
                 <h2>{{producto.nombre}}</h2>
                 <p>{{producto.descripcion}}</p>
-                <p>Precio: {{producto.precio}}</p>
+                @if(producto.oferta; ){
+                <ng-container>
+                  <p><span class="original-price"><s>${{ producto.precio }}</s></span>
+                  <br> 
+                  <strong>${{ producto.precioDescuento }}</strong></p>
+                </ng-container>
+                } @else {
+                  <a>
+                    <br>
+                    <p><strong>${{ producto.precio }}</strong></p>
+                  </a>
+                }
                 <p>Cantidad: {{producto.cantidad}}</p>
                 <p>Categoria: {{producto.categoria}}</p>
                 <p>Marca: {{producto.marca}}</p>

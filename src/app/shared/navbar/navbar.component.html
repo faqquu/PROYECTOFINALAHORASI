@@ -1,53 +1,53 @@
 <nav class="navbar navbar-light bg-light navbar-expand-md justify-content-between ">
     <div class="container-fluid">
         <div class="collapse navbar-collapse mf" id="navbarSupportedContent">
-            
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" id="nv1">
-                    <a class="nav-link" routerLink="/inicio"><strong>Inicio</strong></a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 lista">
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/inicio">
+                        <strong>Inicio</strong>
+                    </a>
                 </li>
-                <li class="nav-item" id="nv2">
-                    <a class="nav-link" routerLink="/productos"><strong>Productos</strong></a>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/productos">
+                        <strong>Productos</strong>
+                    </a>
                 </li>
-                <li class="nav-item" id="nv3">
-                    <a class="nav-link" routerLink="/ofertas"><strong>Ofertas</strong></a>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/ofertas">
+                        <strong>Ofertas</strong>
+                    </a>
                 </li>
-                <li class="nav-item" id="nv4">
-                    <a class="nav-link" routerLink="/contacto"><strong>Contacto</strong></a>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/contacto">
+                        <strong>Contacto</strong>
+                    </a>
                 </li>
-                <li class="nav-item" id="nv5">
-                    <a class="nav-link" routerLink="/quienessomos"><strong>Quienes Somos?</strong></a>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/quienessomos">
+                        <strong>Quienes Somos?</strong>
+                    </a>
                 </li>
             </ul>
-
-            <li class="dropdown" style="list-style-type: none;">
-                <div class="dropdown">
-                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(111, 0, 255); height: 75px;">
-                        <img src="./asset/UI/settings.png" width="50" height="50">
-                    </button>
-                    <ul class="dropdown-menu" style="right: 250px; width: 235px;">
-                        <li>
-                            <a class="dropdown-item">
-                                <p>Modo Oscuro</p>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <button class="btn" type="button" aria-expanded="false" style="background-color: rgb(111, 0, 255); height: 75px;">
+            <button class="nav-item btn" type="button" aria-expanded="false">
                 <li style="list-style-type: none;">
-                    <a class="nav-link" routerLink="/deseados"><img src="./asset/UI/deseados.png" width="50" height="50"></a>
+                    <a class="nav-link"><img src="./asset/UI/settings.png" width="100%" height="100%"></a>
+                </li>    
+            </button>
+            <button class="nav-item btn" type="button" aria-expanded="false" routerLink="/deseados">
+                <li style="list-style-type: none;">
+                    <a class="nav-link"><img src="./asset/UI/deseados.png" width="100%" height="100%"></a>
                 </li>
             </button>
-
-            <button class="btn" type="button" aria-expanded="false" style="background-color: rgb(111, 0, 255); border: none;  height: 75px">
+            <button class="nav-item btn" type="button" aria-expanded="false" routerLink="/carrito">
                 <li style="list-style-type: none;">
-                    <a class="nav-link" routerLink="/carrito"><img src="./asset/UI/carrito.png" width="50" height="50"></a>
+                    <a class="nav-link"><img src="./asset/UI/carrito.png" width="100%" height="100%"></a>
+                </li>
+            </button>
+            <button class="nav-item btn" type="button" aria-expanded="false" routerLink="/login">
+                <li style="list-style-type: none;">
+                        <a class="nav-link">
+                            <img src="./asset/UI/user.png" width="100%" height="100%">
+                        </a>
                 </li>
             </button>
         </div>

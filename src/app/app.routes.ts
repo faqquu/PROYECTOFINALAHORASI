@@ -8,6 +8,8 @@ import { CarritoComponent } from './paginas/carrito/carrito.component';
 import { QuienessomosComponent } from './paginas/quienessomos/quienessomos.component';
 import { DeseadosComponent } from './paginas/deseados/deseados.component';
 import { CompraComponent } from './paginas/compra/compra.component';
+import { LoginComponent } from './paginas/login/login.component';
+import { RegisterComponent } from './paginas/register/register.component';
 
 export const routes: Routes = [
     {path: '', redirectTo : '/inicio', pathMatch: 'full'},
@@ -18,5 +20,8 @@ export const routes: Routes = [
     {path: 'carrito', component:CarritoComponent},
     {path: 'quienessomos', component:QuienessomosComponent},
     {path: 'deseados', component:DeseadosComponent},
-    {path: 'compra', component:CompraComponent}
+    {path: 'compra', component:CompraComponent},
+    {path: 'login', component:LoginComponent},
+    {path: 'register', component:RegisterComponent}
+
 ];

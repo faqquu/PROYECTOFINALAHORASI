@@ -1,9 +1,12 @@
-<h1>Lista de deseados</h1>
-@if (productoEnDeseados.length === 0) {
+<div style="text-align: center;">
+  <h1>Lista de deseados</h1>
+  <br>
   <div>
-    <p>No hay deseados en tu lista de deseados</p>
+    @if (productoEnDeseados.length === 0) {
+      <p>No hay deseados en tu lista de deseados</p>
+    }
   </div>
-}
+</div>
 
 <div class="card-container" align="center">
   @for (item of productoEnDeseados; track item; let i = $index) {

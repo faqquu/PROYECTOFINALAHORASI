@@ -1,81 +1,27 @@
-.card-checkbox.custom-control-input:not(:checked) ~ .custom-control-label::before {
-  background-color: blue; /* Change the background color of the toggle container  when it is not checked */
-  border-color: yellow; /* Change the border color of the toggle container when it is not checked */
-}
-
-.card-checkbox.custom-control-input:checked ~ .custom-control-label::before {
-    background-color: red; /* Change the color of the toggle container when it is checked */
-    border-color: green; /* Change the border color of the toggle container when it is checked */
-}
-
-/* toggle knob */
-.card-checkbox.checkbox-outside-card.custom-control-input:not(:checked) ~ .custom-control-label::after {
-  background-color: #fff; /* Change the background color of the knob when it is checked */
-  border: 2px solid purple; /* Add a border if you prefer */
-}
-
-.card-checkbox.checkbox-outside-card.custom-control-input:checked ~ .custom-control-label::after {
-  background-color: pink; /* Change the background color of the knob when it is checked */
-  border: 2px solid violet; /* Add a border if you prefer */
-}
-
-.card-checkbox.custom-control-input:not(:checked) ~ .custom-control-label::before {
-  background-color: blue; /* Change the background color of the toggle when it is not checked */
-  border-color: yellow; /* Change the border color of the checkbox when it is not checked */
-}
-
 .nav-item{
-  background-color: rgb(230, 12, 157);
-  border: 3px solid;
-  border-width: 3px;
-  border-color: rgb(82, 5, 90);
-  height: 100%px;
-  width: 100%px;
+  background-color: rgb(111, 0, 255);;
+  border: 3px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  list-style-type: none;
+  gap: 20px;
 }
 
+.nav-link{
+  align-items: center;
+}
+
+a.nav-link{
+  padding: none;
+}
 .mf{
     font-family: 'MinaFlower';
     src: url('/./asset/MinaFlower.ttf') format('ttf');
     font-style: normal;
     font-weight: normal;
-}
-
-.svg-button {
-  background-color: #ffffff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.svg-button:hover {
-  background-color: #f0f0f0;
-}
-
-.svg-path {
-  transition: stroke-width 0.3s;
-}
-
-.svg-button:hover .svg-path {
-  stroke-width: 2;
-}
-
-/* CSS */
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.svg-path {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 0; /* Começa totalmente desenhado */
-}
-
-.svg-button:hover .svg-path {
-  animation: draw 500ms ease-in forwards;
 }
 
